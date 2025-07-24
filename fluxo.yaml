@@ -1,0 +1,29 @@
+appId: org.wikipedia
+---
+- launchApp:
+    clearState: true
+
+- tapOn:
+    text: "SKIP"
+
+- tapOn:
+    id: "org.wikipedia:id/search_container"
+
+- inputText:
+    text: "Brasil"
+
+- tapOn:
+    text: "Country in South America"
+
+- assertVisible:
+    text: "Brazil"
+
+- repeat:
+    while:
+      notVisible: "Geography"
+    commands:
+      - swipe: 
+          direction: "UP"
+
+- tapOn:
+    text: "Geography"

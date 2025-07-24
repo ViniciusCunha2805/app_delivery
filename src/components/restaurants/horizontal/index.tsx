@@ -1,11 +1,16 @@
+import { useRouter } from 'expo-router';
 import { Image, Pressable, Text } from 'react-native';
 import { RestaurantsProps } from '..';
 
 export function RestaurantItem({ item }: { item: RestaurantsProps }) {
+  const router = useRouter()
  return (
    <Pressable 
     className='flex flex-col items-center justify-center'
-    onPress={() => console.log("CLICOU NO RESTAURANTE " + item.name)}
+    onPress={() => router.push({
+    pathname: '/store/[id]',
+    params: { id: item.id },
+    })}
     >
     <Image
       source={{ uri: item.image}}

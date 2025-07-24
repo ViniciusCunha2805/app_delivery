@@ -1,6 +1,7 @@
 import Constants from 'expo-constants';
 import { ScrollView, View } from "react-native";
 
+
 import { Banner } from "../components/banner";
 import { Header } from "../components/header";
 import { RestaurantVerticalList } from '../components/list';
